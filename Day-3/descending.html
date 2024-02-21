@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr = [9 , 7 , 6 , 8 , 4 , 3 , 5 , 1 , 2]
+
+    function selecction(arr){
+        for(let i = 0 ; i < arr.length ; i++){
+            let last = arr.length - i - 1;
+            let maxValue = getMax(arr , 0 , last)
+            swap(arr , maxValue , last)
+        }
+    }
+
+    function getMax(arr , value , s){
+        let max = 0 
+        for(let i = value ; i <= s ; i++){
+            if(arr[i] < arr[max]){
+                max = i
+            }
+        }
+        return max
+    }
+
+    function swap(arr , f , value){
+        let tem = arr[f]
+        arr[f] = arr[value]
+        arr[value] = tem
+    }
+
+    selecction(arr)
+    console.log(arr);
+</script>
